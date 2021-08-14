@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C95D1A3F26C6EF3700636BA6 /* YATO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A3D26C6EF3700636BA6 /* YATO.xcdatamodeld */; };
+		C95D1A4526C6F08000636BA6 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A4426C6F08000636BA6 /* PersistenceController.swift */; };
+		C95D1A4C26C6FCA200636BA6 /* Tasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A4A26C6FCA200636BA6 /* Tasks+CoreDataClass.swift */; };
+		C95D1A4D26C6FCA200636BA6 /* Tasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A4B26C6FCA200636BA6 /* Tasks+CoreDataProperties.swift */; };
+		C98471F826C54C7C00E9CB1C /* YATOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98471F726C54C7C00E9CB1C /* YATOApp.swift */; };
+		C98471FA26C54C7C00E9CB1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98471F926C54C7C00E9CB1C /* ContentView.swift */; };
+		C98471FC26C54C8000E9CB1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98471FB26C54C8000E9CB1C /* Assets.xcassets */; };
+		C98471FF26C54C8000E9CB1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98471FE26C54C8000E9CB1C /* Preview Assets.xcassets */; };
+		C984720A26C54C8000E9CB1C /* YATOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984720926C54C8000E9CB1C /* YATOTests.swift */; };
+		C984721526C54C8000E9CB1C /* YATOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984721426C54C8000E9CB1C /* YATOUITests.swift */; };
+		C984722426C54CAA00E9CB1C /* TasksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984722326C54CAA00E9CB1C /* TasksModel.swift */; };
+		C984722626C568E400E9CB1C /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984722526C568E400E9CB1C /* AddTaskView.swift */; };
+		C984722926C58AB600E9CB1C /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984722826C58AB600E9CB1C /* TaskRowView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C984720626C54C8000E9CB1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C98471EC26C54C7C00E9CB1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C98471F326C54C7C00E9CB1C;
+			remoteInfo = YATO;
+		};
+		C984721126C54C8000E9CB1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C98471EC26C54C7C00E9CB1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C98471F326C54C7C00E9CB1C;
+			remoteInfo = YATO;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C93D8DCB26C7D19400864E49 /* YATO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YATO.entitlements; sourceTree = "<group>"; };
+		C95D1A3E26C6EF3700636BA6 /* YATO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YATO.xcdatamodel; sourceTree = "<group>"; };
+		C95D1A4426C6F08000636BA6 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		C95D1A4A26C6FCA200636BA6 /* Tasks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C95D1A4B26C6FCA200636BA6 /* Tasks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C98471F426C54C7C00E9CB1C /* YATO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YATO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C98471F726C54C7C00E9CB1C /* YATOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YATOApp.swift; sourceTree = "<group>"; };
+		C98471F926C54C7C00E9CB1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C98471FB26C54C8000E9CB1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C98471FE26C54C8000E9CB1C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C984720026C54C8000E9CB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C984720526C54C8000E9CB1C /* YATOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YATOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C984720926C54C8000E9CB1C /* YATOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YATOTests.swift; sourceTree = "<group>"; };
+		C984720B26C54C8000E9CB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C984721026C54C8000E9CB1C /* YATOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YATOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C984721426C54C8000E9CB1C /* YATOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YATOUITests.swift; sourceTree = "<group>"; };
+		C984721626C54C8000E9CB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C984722326C54CAA00E9CB1C /* TasksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModel.swift; sourceTree = "<group>"; };
+		C984722526C568E400E9CB1C /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		C984722826C58AB600E9CB1C /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C98471F126C54C7C00E9CB1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C984720226C54C8000E9CB1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C984720D26C54C8000E9CB1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C98471EB26C54C7C00E9CB1C = {
+			isa = PBXGroup;
+			children = (
+				C95D1A4A26C6FCA200636BA6 /* Tasks+CoreDataClass.swift */,
+				C95D1A4B26C6FCA200636BA6 /* Tasks+CoreDataProperties.swift */,
+				C95D1A4426C6F08000636BA6 /* PersistenceController.swift */,
+				C98471F626C54C7C00E9CB1C /* YATO */,
+				C984720826C54C8000E9CB1C /* YATOTests */,
+				C984721326C54C8000E9CB1C /* YATOUITests */,
+				C98471F526C54C7C00E9CB1C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C98471F526C54C7C00E9CB1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C98471F426C54C7C00E9CB1C /* YATO.app */,
+				C984720526C54C8000E9CB1C /* YATOTests.xctest */,
+				C984721026C54C8000E9CB1C /* YATOUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C98471F626C54C7C00E9CB1C /* YATO */ = {
+			isa = PBXGroup;
+			children = (
+				C93D8DCB26C7D19400864E49 /* YATO.entitlements */,
+				C98471F726C54C7C00E9CB1C /* YATOApp.swift */,
+				C984722226C54C9C00E9CB1C /* Model */,
+				C984722726C58AA200E9CB1C /* Views */,
+				C95D1A3D26C6EF3700636BA6 /* YATO.xcdatamodeld */,
+				C98471FB26C54C8000E9CB1C /* Assets.xcassets */,
+				C984720026C54C8000E9CB1C /* Info.plist */,
+				C98471FD26C54C8000E9CB1C /* Preview Content */,
+			);
+			path = YATO;
+			sourceTree = "<group>";
+		};
+		C98471FD26C54C8000E9CB1C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C98471FE26C54C8000E9CB1C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C984720826C54C8000E9CB1C /* YATOTests */ = {
+			isa = PBXGroup;
+			children = (
+				C984720926C54C8000E9CB1C /* YATOTests.swift */,
+				C984720B26C54C8000E9CB1C /* Info.plist */,
+			);
+			path = YATOTests;
+			sourceTree = "<group>";
+		};
+		C984721326C54C8000E9CB1C /* YATOUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C984721426C54C8000E9CB1C /* YATOUITests.swift */,
+				C984721626C54C8000E9CB1C /* Info.plist */,
+			);
+			path = YATOUITests;
+			sourceTree = "<group>";
+		};
+		C984722226C54C9C00E9CB1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C984722326C54CAA00E9CB1C /* TasksModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C984722726C58AA200E9CB1C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C98471F926C54C7C00E9CB1C /* ContentView.swift */,
+				C984722526C568E400E9CB1C /* AddTaskView.swift */,
+				C984722826C58AB600E9CB1C /* TaskRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C98471F326C54C7C00E9CB1C /* YATO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C984721926C54C8000E9CB1C /* Build configuration list for PBXNativeTarget "YATO" */;
+			buildPhases = (
+				C98471F026C54C7C00E9CB1C /* Sources */,
+				C98471F126C54C7C00E9CB1C /* Frameworks */,
+				C98471F226C54C7C00E9CB1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YATO;
+			productName = YATO;
+			productReference = C98471F426C54C7C00E9CB1C /* YATO.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C984720426C54C8000E9CB1C /* YATOTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C984721C26C54C8000E9CB1C /* Build configuration list for PBXNativeTarget "YATOTests" */;
+			buildPhases = (
+				C984720126C54C8000E9CB1C /* Sources */,
+				C984720226C54C8000E9CB1C /* Frameworks */,
+				C984720326C54C8000E9CB1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C984720726C54C8000E9CB1C /* PBXTargetDependency */,
+			);
+			name = YATOTests;
+			productName = YATOTests;
+			productReference = C984720526C54C8000E9CB1C /* YATOTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C984720F26C54C8000E9CB1C /* YATOUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C984721F26C54C8000E9CB1C /* Build configuration list for PBXNativeTarget "YATOUITests" */;
+			buildPhases = (
+				C984720C26C54C8000E9CB1C /* Sources */,
+				C984720D26C54C8000E9CB1C /* Frameworks */,
+				C984720E26C54C8000E9CB1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C984721226C54C8000E9CB1C /* PBXTargetDependency */,
+			);
+			name = YATOUITests;
+			productName = YATOUITests;
+			productReference = C984721026C54C8000E9CB1C /* YATOUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C98471EC26C54C7C00E9CB1C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					C98471F326C54C7C00E9CB1C = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					C984720426C54C8000E9CB1C = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = C98471F326C54C7C00E9CB1C;
+					};
+					C984720F26C54C8000E9CB1C = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = C98471F326C54C7C00E9CB1C;
+					};
+				};
+			};
+			buildConfigurationList = C98471EF26C54C7C00E9CB1C /* Build configuration list for PBXProject "YATO" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C98471EB26C54C7C00E9CB1C;
+			productRefGroup = C98471F526C54C7C00E9CB1C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C98471F326C54C7C00E9CB1C /* YATO */,
+				C984720426C54C8000E9CB1C /* YATOTests */,
+				C984720F26C54C8000E9CB1C /* YATOUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C98471F226C54C7C00E9CB1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C98471FF26C54C8000E9CB1C /* Preview Assets.xcassets in Resources */,
+				C98471FC26C54C8000E9CB1C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C984720326C54C8000E9CB1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C984720E26C54C8000E9CB1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C98471F026C54C7C00E9CB1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C95D1A4526C6F08000636BA6 /* PersistenceController.swift in Sources */,
+				C984722926C58AB600E9CB1C /* TaskRowView.swift in Sources */,
+				C98471FA26C54C7C00E9CB1C /* ContentView.swift in Sources */,
+				C95D1A3F26C6EF3700636BA6 /* YATO.xcdatamodeld in Sources */,
+				C98471F826C54C7C00E9CB1C /* YATOApp.swift in Sources */,
+				C984722426C54CAA00E9CB1C /* TasksModel.swift in Sources */,
+				C95D1A4C26C6FCA200636BA6 /* Tasks+CoreDataClass.swift in Sources */,
+				C984722626C568E400E9CB1C /* AddTaskView.swift in Sources */,
+				C95D1A4D26C6FCA200636BA6 /* Tasks+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C984720126C54C8000E9CB1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C984720A26C54C8000E9CB1C /* YATOTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C984720C26C54C8000E9CB1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C984721526C54C8000E9CB1C /* YATOUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C984720726C54C8000E9CB1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C98471F326C54C7C00E9CB1C /* YATO */;
+			targetProxy = C984720626C54C8000E9CB1C /* PBXContainerItemProxy */;
+		};
+		C984721226C54C8000E9CB1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C98471F326C54C7C00E9CB1C /* YATO */;
+			targetProxy = C984721126C54C8000E9CB1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C984721726C54C8000E9CB1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C984721826C54C8000E9CB1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C984721A26C54C8000E9CB1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = YATO/YATO.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"YATO/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = YATO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.YATO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C984721B26C54C8000E9CB1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = YATO/YATO.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"YATO/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = YATO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.YATO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C984721D26C54C8000E9CB1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YATOTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.YATOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YATO.app/YATO";
+			};
+			name = Debug;
+		};
+		C984721E26C54C8000E9CB1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YATOTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.YATOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YATO.app/YATO";
+			};
+			name = Release;
+		};
+		C984722026C54C8000E9CB1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YATOUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.YATOUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YATO;
+			};
+			name = Debug;
+		};
+		C984722126C54C8000E9CB1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YATOUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.YATOUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YATO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C98471EF26C54C7C00E9CB1C /* Build configuration list for PBXProject "YATO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C984721726C54C8000E9CB1C /* Debug */,
+				C984721826C54C8000E9CB1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C984721926C54C8000E9CB1C /* Build configuration list for PBXNativeTarget "YATO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C984721A26C54C8000E9CB1C /* Debug */,
+				C984721B26C54C8000E9CB1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C984721C26C54C8000E9CB1C /* Build configuration list for PBXNativeTarget "YATOTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C984721D26C54C8000E9CB1C /* Debug */,
+				C984721E26C54C8000E9CB1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C984721F26C54C8000E9CB1C /* Build configuration list for PBXNativeTarget "YATOUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C984722026C54C8000E9CB1C /* Debug */,
+				C984722126C54C8000E9CB1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C95D1A3D26C6EF3700636BA6 /* YATO.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C95D1A3E26C6EF3700636BA6 /* YATO.xcdatamodel */,
+			);
+			currentVersion = C95D1A3E26C6EF3700636BA6 /* YATO.xcdatamodel */;
+			path = YATO.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C98471EC26C54C7C00E9CB1C /* Project object */;
+}
