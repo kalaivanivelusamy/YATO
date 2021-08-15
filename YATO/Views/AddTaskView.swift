@@ -102,6 +102,7 @@ struct AddTaskView: View {
         let newTaskObj = Tasks(context: managedObjectContext)
         newTaskObj.name = newTask
         newTaskObj.date = taskdate
+        newTaskObj.isBusiness = isBusinessTask
         newTaskObj.isFinished = false
         newTaskObj.id = UUID()
         

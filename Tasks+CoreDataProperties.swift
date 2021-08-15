@@ -10,10 +10,11 @@ extension Tasks {
         return NSFetchRequest<Tasks>(entityName: "Tasks")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var date: Date?
-    @NSManaged public var isFinished: Bool
     @NSManaged public var id: UUID?
+    @NSManaged public var isFinished: Bool
+    @NSManaged public var name: String?
+    @NSManaged public var isBusiness: Bool
 
 }
 

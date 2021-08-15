@@ -12,22 +12,39 @@ struct ContentView: View {
         ]
     ) var allTasks: FetchedResults<Tasks>
     
+    
+    
+    
+    
     @State var addPage = false
     @State var isNewTask = false
-
-    @StateObject var tasksContainer = TasksContainer()
+    //@StateObject var tasksContainer = TasksModel()
     @Environment(\.managedObjectContext) var managedObjectContext
-
+    @State var businessCount: Int = 0
     
     var body: some View {
         
         VStack(spacing:20){
+            
             HStack{    
                 Text("Hey, What's up!")
                     .font(.largeTitle)
                     .padding(EdgeInsets(top: 20, leading:20, bottom: 0, trailing: 0))
                 Spacer()
             }
+            
+            Text("Categories").font(.title3).foregroundColor(.gray).padding(EdgeInsets(top: 0, leading: -180, bottom: 0, trailing: 0))
+            Spacer()
+            
+            HStack(spacing: 10)
+              {
+                  
+                  CardView(isBusiness: true,cardText: "Business")
+                  
+                  CardView(isBusiness: false,cardText: "Personal")
+
+              }.padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 0))
+            
         NavigationView {
             List {
                 ForEach(allTasks) { task in 
@@ -67,11 +84,13 @@ struct ContentView: View {
             PersistenceController.shared.save()
         }
     }
+    
+   
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(per)
+//    }
+//}
 

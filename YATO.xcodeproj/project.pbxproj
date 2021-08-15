@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		C95D1A3F26C6EF3700636BA6 /* YATO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A3D26C6EF3700636BA6 /* YATO.xcdatamodeld */; };
 		C95D1A4526C6F08000636BA6 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A4426C6F08000636BA6 /* PersistenceController.swift */; };
-		C95D1A4C26C6FCA200636BA6 /* Tasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A4A26C6FCA200636BA6 /* Tasks+CoreDataClass.swift */; };
-		C95D1A4D26C6FCA200636BA6 /* Tasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A4B26C6FCA200636BA6 /* Tasks+CoreDataProperties.swift */; };
 		C98471F826C54C7C00E9CB1C /* YATOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98471F726C54C7C00E9CB1C /* YATOApp.swift */; };
 		C98471FA26C54C7C00E9CB1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98471F926C54C7C00E9CB1C /* ContentView.swift */; };
 		C98471FC26C54C8000E9CB1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98471FB26C54C8000E9CB1C /* Assets.xcassets */; };
@@ -20,6 +18,9 @@
 		C984722426C54CAA00E9CB1C /* TasksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984722326C54CAA00E9CB1C /* TasksModel.swift */; };
 		C984722626C568E400E9CB1C /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984722526C568E400E9CB1C /* AddTaskView.swift */; };
 		C984722926C58AB600E9CB1C /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984722826C58AB600E9CB1C /* TaskRowView.swift */; };
+		C9AECFFB26C8F07B00AAACC8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFFA26C8F07B00AAACC8 /* CardView.swift */; };
+		C9AECFFE26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFFC26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift */; };
+		C9AECFFF26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFFD26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +44,6 @@
 		C93D8DCB26C7D19400864E49 /* YATO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YATO.entitlements; sourceTree = "<group>"; };
 		C95D1A3E26C6EF3700636BA6 /* YATO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YATO.xcdatamodel; sourceTree = "<group>"; };
 		C95D1A4426C6F08000636BA6 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		C95D1A4A26C6FCA200636BA6 /* Tasks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C95D1A4B26C6FCA200636BA6 /* Tasks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C98471F426C54C7C00E9CB1C /* YATO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YATO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98471F726C54C7C00E9CB1C /* YATOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YATOApp.swift; sourceTree = "<group>"; };
 		C98471F926C54C7C00E9CB1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +59,9 @@
 		C984722326C54CAA00E9CB1C /* TasksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModel.swift; sourceTree = "<group>"; };
 		C984722526C568E400E9CB1C /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		C984722826C58AB600E9CB1C /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
+		C9AECFFA26C8F07B00AAACC8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C9AECFFC26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9AECFFD26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +92,8 @@
 		C98471EB26C54C7C00E9CB1C = {
 			isa = PBXGroup;
 			children = (
-				C95D1A4A26C6FCA200636BA6 /* Tasks+CoreDataClass.swift */,
-				C95D1A4B26C6FCA200636BA6 /* Tasks+CoreDataProperties.swift */,
+				C9AECFFC26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift */,
+				C9AECFFD26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift */,
 				C95D1A4426C6F08000636BA6 /* PersistenceController.swift */,
 				C98471F626C54C7C00E9CB1C /* YATO */,
 				C984720826C54C8000E9CB1C /* YATOTests */,
@@ -165,6 +167,7 @@
 				C98471F926C54C7C00E9CB1C /* ContentView.swift */,
 				C984722526C568E400E9CB1C /* AddTaskView.swift */,
 				C984722826C58AB600E9CB1C /* TaskRowView.swift */,
+				C9AECFFA26C8F07B00AAACC8 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,13 +303,14 @@
 			files = (
 				C95D1A4526C6F08000636BA6 /* PersistenceController.swift in Sources */,
 				C984722926C58AB600E9CB1C /* TaskRowView.swift in Sources */,
+				C9AECFFF26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift in Sources */,
 				C98471FA26C54C7C00E9CB1C /* ContentView.swift in Sources */,
 				C95D1A3F26C6EF3700636BA6 /* YATO.xcdatamodeld in Sources */,
+				C9AECFFB26C8F07B00AAACC8 /* CardView.swift in Sources */,
 				C98471F826C54C7C00E9CB1C /* YATOApp.swift in Sources */,
 				C984722426C54CAA00E9CB1C /* TasksModel.swift in Sources */,
-				C95D1A4C26C6FCA200636BA6 /* Tasks+CoreDataClass.swift in Sources */,
+				C9AECFFE26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift in Sources */,
 				C984722626C568E400E9CB1C /* AddTaskView.swift in Sources */,
-				C95D1A4D26C6FCA200636BA6 /* Tasks+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
