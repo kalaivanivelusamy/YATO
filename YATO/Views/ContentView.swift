@@ -13,15 +13,12 @@ struct ContentView: View {
     ) var allTasks: FetchedResults<Tasks>
     
     
-    
-    
-    
     @State var addPage = false
     @State var isNewTask = false
-    //@StateObject var tasksContainer = TasksModel()
     @Environment(\.managedObjectContext) var managedObjectContext
-    @State var businessCount: Int = 0
-    
+    @State var totalBusinessTasksFinished: Float = 0.0
+    @State var totalPersonalTasksFinished: Float = 0.0
+
     var body: some View {
         
         VStack(spacing:20){
@@ -30,31 +27,31 @@ struct ContentView: View {
                 Text("Hey, What's up!")
                     .font(.largeTitle)
                     .padding(EdgeInsets(top: 20, leading:20, bottom: 0, trailing: 0))
-                Spacer()
             }
             
-            Text("Categories").font(.title3).foregroundColor(.gray).padding(EdgeInsets(top: 0, leading: -180, bottom: 0, trailing: 0))
-            Spacer()
+            Text("Categories").font(.title3).foregroundColor(.black).padding(.horizontal, 10)
             
-            HStack(spacing: 10)
-              {
-                  
-                  CardView(isBusiness: true,cardText: "Business")
-                  
-                  CardView(isBusiness: false,cardText: "Personal")
+            ScrollView(.horizontal, showsIndicators: false){
+            HStack(spacing: 30) {
+                CardView(isBusiness: true,cardText: "Business",totalTasksFinished: $totalBusinessTasksFinished)
+                CardView(isBusiness: false,cardText: "Personal",totalTasksFinished: $totalPersonalTasksFinished)
+                  CardView(isBusiness: false,cardText: "Finance",totalTasksFinished: $totalPersonalTasksFinished)
 
-              }.padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 0))
-            
+            }
+            .padding()
+        }
+        
+
         NavigationView {
             List {
                 ForEach(allTasks) { task in 
-                    TaskRowView(taskRow: task)
+                    TaskRowView(taskRow: task,totalTasksFinished: task.isBusiness ? $totalBusinessTasksFinished : $totalPersonalTasksFinished)
                 }
                 .onDelete(perform: deleteTask)
 //                .onTapGesture {
 //                            print("tapped")
 //                        }
-            }
+            }.background(Color(UIColor.clear))
             .sheet(isPresented: $addPage) {
                 AddTaskView(addPage: $addPage)
             }
@@ -69,8 +66,8 @@ struct ContentView: View {
                         .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
                 }
             )
-        }
-     }
+        }.background(Color(UIColor.clear))
+    }.background(Color(UIColor.lightGray))
 
         }
     

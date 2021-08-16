@@ -2,14 +2,19 @@
 import SwiftUI
 
 struct TaskRowView: View {
-   // var taskRow: TasksModel
+
     let taskRow: Tasks
     @State var isDone = false
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @Binding var totalTasksFinished: Float
+
     
     var body: some View {
         HStack(spacing:10){
             Button(action:{
-                    isDone.toggle()
+                isDone.toggle()
+                totalTasksFinished = isDone ? (totalTasksFinished + 1) : (totalTasksFinished - 1)
             })
             {
                 Image(systemName: isDone ? "checkmark.square" : "square")
@@ -17,7 +22,7 @@ struct TaskRowView: View {
                 .foregroundColor( isDone ? .gray : .blue)
             }
             .frame(width: 30, height: 30, alignment: .leading)
-            getTitle().font(.title2).strikethrough(isDone).foregroundColor(isDone ? .gray : .black)  
+            getTitle().font(Font.custom("Georgia", size: 23.0)).strikethrough(isDone).foregroundColor(isDone ? .gray : .black)
             getDate().font(.title2).strikethrough(isDone).foregroundColor(isDone ? .gray : .black)            
 
         }
@@ -46,7 +51,10 @@ struct TaskRowView: View {
             return Text("")
         }
         
-
+    }
+    
+    func finishTask(){
+        
     }
     
     

@@ -1,9 +1,3 @@
-//
-//  CardView.swift
-//  YATO
-//
-//  Created by V, Kalaivani V. (623-Extern) on 15/08/21.
-//
 
 import SwiftUI
 
@@ -11,10 +5,11 @@ struct CardView: View {
     @State var noOfTasks: Double = 2
     @State var isBusiness: Bool
     @State var cardText = ""
-//    @Binding var numOfTasks_business: Int 
-//    @State var numOfTasks_personal: Int = 0
+    @State var scale: CGFloat = 1
 
-    //@ObservedObject var businessTasks : Tasks
+    // For both personal and business tasks same binding
+    @Binding var totalTasksFinished: Float
+
     
     @FetchRequest(
         entity: Tasks.entity(),
@@ -33,27 +28,60 @@ struct CardView: View {
         predicate: NSPredicate(format: "isBusiness == false")
     )  var personalTasks: FetchedResults<Tasks>
     
+    
+
+    
     var body: some View {
         
         ZStack{
-            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(Color.white)
-                .shadow(radius: 10)
             
-            VStack(alignment: .center,spacing:20) {
-                
-            Text("\(businessTasks.count) tasks").foregroundColor(.gray).hideView(!isBusiness)
-            Text("\(personalTasks.count) tasks").foregroundColor(.gray).hideView(isBusiness)
-                
+            Color.white
+                .cornerRadius(25)
+            
+            VStack(alignment: .leading,spacing:10) {
+            Text( isBusiness ? "\(businessTasks.count) tasks" : "\(personalTasks.count) tasks").foregroundColor(.gray)
+
             Text(cardText).font(.headline).foregroundColor(.black)
+
+            
+               // if totalTasksFinished > 0.0 {
+                    createSlider()
+               // }
                 
-            Slider(value: $noOfTasks, in: 0...10)
-                .padding(20)
-                .accentColor(isBusiness ? .blue : .pink)
-            }.padding()
+            }.padding(.horizontal,5).padding(.bottom,15).frame(width: 200, height: 60)  
+        }.frame(width: 250, height: 120)
+        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 0)
+
+    }
+    
+    func createSlider() -> some View {
+        let count = Float(isBusiness ? businessTasks.count : personalTasks.count)
+       
+//        return Slider(value: $totalTasksFinished, in: 0...count, step: 1.0)
+//        .accentColor(isBusiness ? .blue : .pink)
         
-        }.frame(width: 200, height: 100)
+       return //GeometryReader { geometry in
+                    ZStack {
+                        //HStack{
+                        Rectangle().frame(width: 200, height: 10)
+                            .opacity(1.0)
+                            .foregroundColor(Color(UIColor.systemTeal))
+                        
+                        Rectangle().frame(width:20, height:20).background(Color.black).scaleEffect(scale)
+                            .onAppear {
+                                let baseAnimation = Animation.easeInOut(duration: 1)
+                                let repeated = baseAnimation.repeatForever(autoreverses: true)
+
+                                withAnimation(repeated) {
+                                    scale = 0.5
+                                }
+                            }
+
+                        //}
+                    }.cornerRadius(45.0)
+                //}
         
+       
     }
 }
 
