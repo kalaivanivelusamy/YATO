@@ -27,10 +27,10 @@ struct AuthenticationButtonStyle: ButtonStyle {
     configuration.label
       .foregroundColor(.white)
       .padding()
-//      .frame(maxWidth: .infinity)
+      .frame(maxWidth: .infinity)
       .background(Color(.systemIndigo))
       .cornerRadius(12)
-        .clipShape(Circle())
+        //.clipShape(Circle())
       .padding()
   }
 }

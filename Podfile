@@ -7,6 +7,7 @@ target 'YATO' do
 
   # Pods for YATO
    pod 'GoogleSignIn'
+   pod 'Firebase/Core'
 
   target 'YATOTests' do
     inherit! :search_paths

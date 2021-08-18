@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>467692619535-srotu5lfjlomhm3s27hdobfh48b96ubl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.467692619535-srotu5lfjlomhm3s27hdobfh48b96ubl</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDc5vhUXZ292RYQnEYEmR9hLKD92cS4Nfo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>467692619535</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.YATOApp</string>
+	<key>PROJECT_ID</key>
+	<string>yato-323116</string>
+	<key>STORAGE_BUCKET</key>
+	<string>yato-323116.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:467692619535:ios:5d7f1fd073f8a9a8bfe07a</string>
+</dict>
+</plist>

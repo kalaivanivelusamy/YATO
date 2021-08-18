@@ -1,6 +1,7 @@
 
 import Foundation
 import GoogleSignIn
+import Firebase
 
 class AuthenticationViewModel: NSObject,ObservableObject {
     
@@ -32,7 +33,14 @@ class AuthenticationViewModel: NSObject,ObservableObject {
     
     func signOut() {
       GIDSignIn.sharedInstance().signOut()
-        state = .signedOut
+        
+        do {
+              try Auth.auth().signOut()
+            state = .signedOut
+
+            } catch let signOutError as NSError {
+              print(signOutError.localizedDescription)
+            }
     }
 
 }
@@ -43,12 +51,25 @@ extension AuthenticationViewModel: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         if error == nil {
-            if let authentication = user.authentication {
-                let credential = GoogleAuthProvider.credential(authentication)
-            }
+            firebaseAuthentication(withUser: user)
+        } else{
+            print(error.debugDescription)
         }
-        print(" Signed in \(error.debugDescription) and \(user.authentication)")
-        self.state = .signedIn
+        
+    }
+    
+    private func firebaseAuthentication(withUser user: GIDGoogleUser) {
+      if let authentication = user.authentication {
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+
+        Auth.auth().signIn(with: credential) { (_, error) in
+          if let error = error {
+            print(error.localizedDescription)
+          } else {
+            self.state = .signedIn
+          }
+        }
+      }
     }
     
     
