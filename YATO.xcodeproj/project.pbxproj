@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61E7C5AE9F77C6538C37EAB1 /* Pods_YATOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D7C10562993B7E4E21A288 /* Pods_YATOTests.framework */; };
+		AF496F0E2D8141A20CD499F4 /* Pods_YATO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A4AAFE9E1158F88C48C4FC /* Pods_YATO.framework */; };
+		C40D0F0F8228F9E720512973 /* Pods_YATO_YATOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFD32D61185EBD2A0892FF5 /* Pods_YATO_YATOUITests.framework */; };
 		C95D1A3F26C6EF3700636BA6 /* YATO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A3D26C6EF3700636BA6 /* YATO.xcdatamodeld */; };
 		C95D1A4526C6F08000636BA6 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A4426C6F08000636BA6 /* PersistenceController.swift */; };
 		C98471F826C54C7C00E9CB1C /* YATOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98471F726C54C7C00E9CB1C /* YATOApp.swift */; };
@@ -18,6 +21,8 @@
 		C984722426C54CAA00E9CB1C /* TasksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984722326C54CAA00E9CB1C /* TasksModel.swift */; };
 		C984722626C568E400E9CB1C /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984722526C568E400E9CB1C /* AddTaskView.swift */; };
 		C984722926C58AB600E9CB1C /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984722826C58AB600E9CB1C /* TaskRowView.swift */; };
+		C99C7D2126CB5DD700012BCF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99C7D2026CB5DD700012BCF /* LoginView.swift */; };
+		C99C7D2426CB5FF500012BCF /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99C7D2326CB5FF500012BCF /* AuthenticationViewModel.swift */; };
 		C9AECFFB26C8F07B00AAACC8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFFA26C8F07B00AAACC8 /* CardView.swift */; };
 		C9AECFFE26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFFC26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift */; };
 		C9AECFFF26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFFD26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift */; };
@@ -41,6 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A5864F7CCE8668EF1A8695C /* Pods-YATOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATOTests.release.xcconfig"; path = "Target Support Files/Pods-YATOTests/Pods-YATOTests.release.xcconfig"; sourceTree = "<group>"; };
+		42D7C10562993B7E4E21A288 /* Pods_YATOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YATOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FFD32D61185EBD2A0892FF5 /* Pods_YATO_YATOUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YATO_YATOUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5527DDE70C997D93E4FFE0E6 /* Pods-YATO-YATOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATO-YATOUITests.release.xcconfig"; path = "Target Support Files/Pods-YATO-YATOUITests/Pods-YATO-YATOUITests.release.xcconfig"; sourceTree = "<group>"; };
+		90118BCF90ABB1CFC976294B /* Pods-YATO-YATOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATO-YATOUITests.debug.xcconfig"; path = "Target Support Files/Pods-YATO-YATOUITests/Pods-YATO-YATOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C93D8DCB26C7D19400864E49 /* YATO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YATO.entitlements; sourceTree = "<group>"; };
 		C95D1A3E26C6EF3700636BA6 /* YATO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YATO.xcdatamodel; sourceTree = "<group>"; };
 		C95D1A4426C6F08000636BA6 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -59,9 +69,15 @@
 		C984722326C54CAA00E9CB1C /* TasksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModel.swift; sourceTree = "<group>"; };
 		C984722526C568E400E9CB1C /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		C984722826C58AB600E9CB1C /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
+		C99C7D2026CB5DD700012BCF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C99C7D2326CB5FF500012BCF /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		C9AECFFA26C8F07B00AAACC8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C9AECFFC26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9AECFFD26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DB3EAC984F534199741026EF /* Pods-YATO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATO.release.xcconfig"; path = "Target Support Files/Pods-YATO/Pods-YATO.release.xcconfig"; sourceTree = "<group>"; };
+		EF56564CC6D7D5E5377F1366 /* Pods-YATOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATOTests.debug.xcconfig"; path = "Target Support Files/Pods-YATOTests/Pods-YATOTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F2A4AAFE9E1158F88C48C4FC /* Pods_YATO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YATO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F666EDE225314172DF2EE116 /* Pods-YATO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATO.debug.xcconfig"; path = "Target Support Files/Pods-YATO/Pods-YATO.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF496F0E2D8141A20CD499F4 /* Pods_YATO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61E7C5AE9F77C6538C37EAB1 /* Pods_YATOTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,12 +101,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40D0F0F8228F9E720512973 /* Pods_YATO_YATOUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33D18A126FC11958DF712B8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F666EDE225314172DF2EE116 /* Pods-YATO.debug.xcconfig */,
+				DB3EAC984F534199741026EF /* Pods-YATO.release.xcconfig */,
+				90118BCF90ABB1CFC976294B /* Pods-YATO-YATOUITests.debug.xcconfig */,
+				5527DDE70C997D93E4FFE0E6 /* Pods-YATO-YATOUITests.release.xcconfig */,
+				EF56564CC6D7D5E5377F1366 /* Pods-YATOTests.debug.xcconfig */,
+				0A5864F7CCE8668EF1A8695C /* Pods-YATOTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C98471EB26C54C7C00E9CB1C = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +131,8 @@
 				C984720826C54C8000E9CB1C /* YATOTests */,
 				C984721326C54C8000E9CB1C /* YATOUITests */,
 				C98471F526C54C7C00E9CB1C /* Products */,
+				33D18A126FC11958DF712B8B /* Pods */,
+				E304C383479C4F5669AC3611 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +151,7 @@
 			children = (
 				C93D8DCB26C7D19400864E49 /* YATO.entitlements */,
 				C98471F726C54C7C00E9CB1C /* YATOApp.swift */,
+				C99C7D2226CB5FE300012BCF /* ViewModel */,
 				C984722226C54C9C00E9CB1C /* Model */,
 				C984722726C58AA200E9CB1C /* Views */,
 				C95D1A3D26C6EF3700636BA6 /* YATO.xcdatamodeld */,
@@ -168,8 +203,27 @@
 				C984722526C568E400E9CB1C /* AddTaskView.swift */,
 				C984722826C58AB600E9CB1C /* TaskRowView.swift */,
 				C9AECFFA26C8F07B00AAACC8 /* CardView.swift */,
+				C99C7D2026CB5DD700012BCF /* LoginView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C99C7D2226CB5FE300012BCF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C99C7D2326CB5FF500012BCF /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E304C383479C4F5669AC3611 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2A4AAFE9E1158F88C48C4FC /* Pods_YATO.framework */,
+				4FFD32D61185EBD2A0892FF5 /* Pods_YATO_YATOUITests.framework */,
+				42D7C10562993B7E4E21A288 /* Pods_YATOTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,9 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C984721926C54C8000E9CB1C /* Build configuration list for PBXNativeTarget "YATO" */;
 			buildPhases = (
+				A11DC4C2ACD064E0DF235E97 /* [CP] Check Pods Manifest.lock */,
 				C98471F026C54C7C00E9CB1C /* Sources */,
 				C98471F126C54C7C00E9CB1C /* Frameworks */,
 				C98471F226C54C7C00E9CB1C /* Resources */,
+				AD247D5C264646A6FA6FA287 /* [CP] Embed Pods Frameworks */,
+				8E8F85FF13D47445F88F58A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +253,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C984721C26C54C8000E9CB1C /* Build configuration list for PBXNativeTarget "YATOTests" */;
 			buildPhases = (
+				510133CFE4A8714815E6F22C /* [CP] Check Pods Manifest.lock */,
 				C984720126C54C8000E9CB1C /* Sources */,
 				C984720226C54C8000E9CB1C /* Frameworks */,
 				C984720326C54C8000E9CB1C /* Resources */,
@@ -214,9 +272,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C984721F26C54C8000E9CB1C /* Build configuration list for PBXNativeTarget "YATOUITests" */;
 			buildPhases = (
+				8399C793EF742823FF3580E7 /* [CP] Check Pods Manifest.lock */,
 				C984720C26C54C8000E9CB1C /* Sources */,
 				C984720D26C54C8000E9CB1C /* Frameworks */,
 				C984720E26C54C8000E9CB1C /* Resources */,
+				881ABF165959B0DD38EA1588 /* [CP] Embed Pods Frameworks */,
+				5DFE517FDDE8A4D49201F3DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,11 +357,149 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		510133CFE4A8714815E6F22C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YATOTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DFE517FDDE8A4D49201F3DC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YATO-YATOUITests/Pods-YATO-YATOUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YATO-YATOUITests/Pods-YATO-YATOUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YATO-YATOUITests/Pods-YATO-YATOUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8399C793EF742823FF3580E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YATO-YATOUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		881ABF165959B0DD38EA1588 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YATO-YATOUITests/Pods-YATO-YATOUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YATO-YATOUITests/Pods-YATO-YATOUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YATO-YATOUITests/Pods-YATO-YATOUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E8F85FF13D47445F88F58A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YATO/Pods-YATO-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YATO/Pods-YATO-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YATO/Pods-YATO-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A11DC4C2ACD064E0DF235E97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YATO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD247D5C264646A6FA6FA287 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YATO/Pods-YATO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YATO/Pods-YATO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YATO/Pods-YATO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C98471F026C54C7C00E9CB1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99C7D2426CB5FF500012BCF /* AuthenticationViewModel.swift in Sources */,
 				C95D1A4526C6F08000636BA6 /* PersistenceController.swift in Sources */,
 				C984722926C58AB600E9CB1C /* TaskRowView.swift in Sources */,
 				C9AECFFF26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift in Sources */,
@@ -309,6 +508,7 @@
 				C9AECFFB26C8F07B00AAACC8 /* CardView.swift in Sources */,
 				C98471F826C54C7C00E9CB1C /* YATOApp.swift in Sources */,
 				C984722426C54CAA00E9CB1C /* TasksModel.swift in Sources */,
+				C99C7D2126CB5DD700012BCF /* LoginView.swift in Sources */,
 				C9AECFFE26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift in Sources */,
 				C984722626C568E400E9CB1C /* AddTaskView.swift in Sources */,
 			);
@@ -464,6 +664,7 @@
 		};
 		C984721A26C54C8000E9CB1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F666EDE225314172DF2EE116 /* Pods-YATO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -477,7 +678,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.YATO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YATOApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -486,6 +687,7 @@
 		};
 		C984721B26C54C8000E9CB1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB3EAC984F534199741026EF /* Pods-YATO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -499,7 +701,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.YATO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YATOApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -508,6 +710,7 @@
 		};
 		C984721D26C54C8000E9CB1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF56564CC6D7D5E5377F1366 /* Pods-YATOTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -529,6 +732,7 @@
 		};
 		C984721E26C54C8000E9CB1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A5864F7CCE8668EF1A8695C /* Pods-YATOTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -550,6 +754,7 @@
 		};
 		C984722026C54C8000E9CB1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90118BCF90ABB1CFC976294B /* Pods-YATO-YATOUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -569,6 +774,7 @@
 		};
 		C984722126C54C8000E9CB1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5527DDE70C997D93E4FFE0E6 /* Pods-YATO-YATOUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
