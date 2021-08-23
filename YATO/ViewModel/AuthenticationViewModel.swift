@@ -33,15 +33,13 @@ class AuthenticationViewModel: NSObject,ObservableObject {
     
     func signOut() {
       GIDSignIn.sharedInstance().signOut()
-        
         do {
-              try Auth.auth().signOut()
+            try Auth.auth().signOut()
             state = .signedOut
-
             } catch let signOutError as NSError {
               print(signOutError.localizedDescription)
             }
-    }
+     }
 
 }
 

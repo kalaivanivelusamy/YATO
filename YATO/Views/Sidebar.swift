@@ -10,6 +10,7 @@ struct Sidebar: View {
                 Label("Tasks", systemImage: "book.closed")
                 Label("Calendar", systemImage: "calendar")
                 Label("Search", systemImage: "magnifyingglass")
+                Label("Sign Out", systemImage: "signout")
                 
             }
             .listStyle(SidebarListStyle())

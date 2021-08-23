@@ -20,7 +20,7 @@ struct YATOApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
-               // .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
 //            LoginView()
 //                .environmentObject(viewModel)
         }

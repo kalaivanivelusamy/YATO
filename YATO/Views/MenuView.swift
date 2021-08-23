@@ -38,7 +38,22 @@ struct MenuView: View {
                     .foregroundColor(.gray)
                     .font(.headline)
                 } .padding(.top, 30)
+            
+           
             Spacer()
+            
+            VStack {
+               //Graph for consistency
+                
+                Text("Good")
+                    .foregroundColor(.gray)
+                    .font(.headline)
+                
+                Text("Consistency")
+                    .foregroundColor(.white)
+                    .font(.title2)
+            }.padding(.bottom,30)
+            
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)

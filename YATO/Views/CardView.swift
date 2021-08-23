@@ -65,7 +65,7 @@ struct CardView: View {
                         //HStack{
                         Rectangle().frame(width: 200, height: 10)
                             .opacity(1.0)
-                            .foregroundColor(Color(UIColor.systemTeal))
+                            .foregroundColor(Color(UIColor.systemBlue))
                         
                         Rectangle().frame(width:20, height:20).background(Color.black).scaleEffect(scale)
                             .onAppear {

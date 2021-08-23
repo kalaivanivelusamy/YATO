@@ -9,9 +9,16 @@ struct LoginView: View {
 
     var body: some View {
         
-        Button("G"){
-            viewModel.signIn()
-        }.buttonStyle(AuthenticationButtonStyle())
+        HStack(spacing:10){
+            Button("Google"){
+                viewModel.signIn()
+            }.buttonStyle(AuthenticationButtonStyle())
+            
+            Button("Github") {
+                
+            }.buttonStyle(AuthenticationButtonStyle())
+        }
+       
         
     }
 }
@@ -28,9 +35,12 @@ struct AuthenticationButtonStyle: ButtonStyle {
       .foregroundColor(.white)
       .padding()
       .frame(maxWidth: .infinity)
-      .background(Color(.systemIndigo))
+      .background(Color(.systemBlue))
       .cornerRadius(12)
-        //.clipShape(Circle())
-      .padding()
+       // .clipShape(Circle())
+        .padding()
+
+
+
   }
 }
