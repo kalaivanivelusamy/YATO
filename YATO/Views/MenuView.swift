@@ -1,11 +1,5 @@
-//
-//  MenuView.swift
-//  YATO
-//
-//  Created by V, Kalaivani V. (623-Extern) on 19/08/21.
-//
-
 import SwiftUI
+import SwiftUICharts
 
 struct MenuView: View {
     
@@ -44,7 +38,10 @@ struct MenuView: View {
             
             VStack {
                //Graph for consistency
-                
+                LineView(data: [8,23,54,32,12,37,7,23,43])
+                    
+                    .padding(20)
+
                 Text("Good")
                     .foregroundColor(.gray)
                     .font(.headline)
