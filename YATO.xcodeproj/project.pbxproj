@@ -10,7 +10,6 @@
 		61E7C5AE9F77C6538C37EAB1 /* Pods_YATOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D7C10562993B7E4E21A288 /* Pods_YATOTests.framework */; };
 		AF496F0E2D8141A20CD499F4 /* Pods_YATO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A4AAFE9E1158F88C48C4FC /* Pods_YATO.framework */; };
 		C40D0F0F8228F9E720512973 /* Pods_YATO_YATOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFD32D61185EBD2A0892FF5 /* Pods_YATO_YATOUITests.framework */; };
-		C934AB9926D3FBB400102653 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C934AB9826D3FBB400102653 /* SwiftUICharts */; };
 		C9350A3526CDEB1D00CDA577 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9350A3426CDEB1D00CDA577 /* Sidebar.swift */; };
 		C9350A3726CECBAA00CDA577 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9350A3626CECBAA00CDA577 /* MenuView.swift */; };
 		C95D1A3F26C6EF3700636BA6 /* YATO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A3D26C6EF3700636BA6 /* YATO.xcdatamodeld */; };
@@ -36,6 +35,7 @@
 		C9AECFFB26C8F07B00AAACC8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFFA26C8F07B00AAACC8 /* CardView.swift */; };
 		C9AECFFE26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFFC26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift */; };
 		C9AECFFF26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFFD26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift */; };
+		C9B813EF26D53925009D5F8A /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = C9B813EE26D53925009D5F8A /* Charts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,8 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C934AB9926D3FBB400102653 /* SwiftUICharts in Frameworks */,
 				AF496F0E2D8141A20CD499F4 /* Pods_YATO.framework in Frameworks */,
+				C9B813EF26D53925009D5F8A /* Charts in Frameworks */,
 				C98B1FF526CD74380065DCBF /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +267,7 @@
 			name = YATO;
 			packageProductDependencies = (
 				C98B1FF426CD74380065DCBF /* FirebaseAuth */,
-				C934AB9826D3FBB400102653 /* SwiftUICharts */,
+				C9B813EE26D53925009D5F8A /* Charts */,
 			);
 			productName = YATO;
 			productReference = C98471F426C54C7C00E9CB1C /* YATO.app */;
@@ -346,7 +346,7 @@
 			mainGroup = C98471EB26C54C7C00E9CB1C;
 			packageReferences = (
 				C98B1FF326CD74380065DCBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				C934AB9726D3FBB400102653 /* XCRemoteSwiftPackageReference "ChartView" */,
+				C9B813ED26D53925009D5F8A /* XCRemoteSwiftPackageReference "swiftui-charts" */,
 			);
 			productRefGroup = C98471F526C54C7C00E9CB1C /* Products */;
 			projectDirPath = "";
@@ -876,14 +876,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C934AB9726D3FBB400102653 /* XCRemoteSwiftPackageReference "ChartView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppPear/ChartView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.5;
-			};
-		};
 		C98B1FF326CD74380065DCBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -892,18 +884,26 @@
 				minimumVersion = 8.6.0;
 			};
 		};
+		C9B813ED26D53925009D5F8A /* XCRemoteSwiftPackageReference "swiftui-charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C934AB9826D3FBB400102653 /* SwiftUICharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C934AB9726D3FBB400102653 /* XCRemoteSwiftPackageReference "ChartView" */;
-			productName = SwiftUICharts;
-		};
 		C98B1FF426CD74380065DCBF /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C98B1FF326CD74380065DCBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		C9B813EE26D53925009D5F8A /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9B813ED26D53925009D5F8A /* XCRemoteSwiftPackageReference "swiftui-charts" */;
+			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 
