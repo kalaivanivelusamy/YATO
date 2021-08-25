@@ -1,24 +1,22 @@
 import SwiftUI
 import Charts
+import GoogleSignIn
 
 struct MenuView: View {
     
+    private let user = GIDSignIn.sharedInstance().currentUser
 
     var body: some View {
         VStack(alignment: .leading) {
             
             VStack(alignment: .center,spacing:10) {
-                Image(uiImage: UIImage(named: "Profile")!)
-                    .resizable()
+                NetworkImage(url: user?.profile.imageURL(withDimension: 200))
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 100, alignment: .center)
-                    
                     .clipShape(Circle())
-                    .shadow(radius: 10)
-                    .overlay(Circle().stroke(Color.red,lineWidth: 2))
-                Text("Name")
-                    .foregroundColor(.white)
-                    .font(.title)
+                Text(user?.profile.name ?? "")
+                  .font(.headline)
+                .foregroundColor(.white)
             }.padding(.top,200)
            
             Spacer()
@@ -33,10 +31,10 @@ struct MenuView: View {
             }.padding(.top,30)
             
             HStack {
-                    Image(systemName: "envelope")
+                    Image(systemName: "Categories")
                         .foregroundColor(.gray)
                         .imageScale(.large)
-                    Text("Messages")
+                    Text("Categories")
                     .foregroundColor(.gray)
                     .font(.headline)
                     }.padding(.top, 30)

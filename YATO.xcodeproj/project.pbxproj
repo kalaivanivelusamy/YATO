@@ -30,6 +30,8 @@
 		C98B1FFB26CD77430065DCBF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B1FFA26CD77430065DCBF /* HomeView.swift */; };
 		C98B1FFC26CD77430065DCBF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B1FFA26CD77430065DCBF /* HomeView.swift */; };
 		C98B1FFD26CD77430065DCBF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B1FFA26CD77430065DCBF /* HomeView.swift */; };
+		C98EF13D26D646FB009BC421 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EF13C26D646FB009BC421 /* UserModel.swift */; };
+		C98EF13F26D65F89009BC421 /* CenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EF13E26D65F89009BC421 /* CenterView.swift */; };
 		C99C7D2126CB5DD700012BCF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99C7D2026CB5DD700012BCF /* LoginView.swift */; };
 		C99C7D2426CB5FF500012BCF /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99C7D2326CB5FF500012BCF /* AuthenticationViewModel.swift */; };
 		C9AECFFB26C8F07B00AAACC8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFFA26C8F07B00AAACC8 /* CardView.swift */; };
@@ -83,6 +85,8 @@
 		C984722826C58AB600E9CB1C /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
 		C98B1FF626CD74DD0065DCBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C98B1FFA26CD77430065DCBF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C98EF13C26D646FB009BC421 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		C98EF13E26D65F89009BC421 /* CenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterView.swift; sourceTree = "<group>"; };
 		C99C7D2026CB5DD700012BCF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C99C7D2326CB5FF500012BCF /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		C9AECFFA26C8F07B00AAACC8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				C984722326C54CAA00E9CB1C /* TasksModel.swift */,
+				C98EF13C26D646FB009BC421 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				C98B1FFA26CD77430065DCBF /* HomeView.swift */,
 				C9350A3426CDEB1D00CDA577 /* Sidebar.swift */,
 				C9350A3626CECBAA00CDA577 /* MenuView.swift */,
+				C98EF13E26D65F89009BC421 /* CenterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -537,9 +543,11 @@
 				C9AECFFF26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift in Sources */,
 				C98471FA26C54C7C00E9CB1C /* ContentView.swift in Sources */,
 				C95D1A3F26C6EF3700636BA6 /* YATO.xcdatamodeld in Sources */,
+				C98EF13F26D65F89009BC421 /* CenterView.swift in Sources */,
 				C9AECFFB26C8F07B00AAACC8 /* CardView.swift in Sources */,
 				C98471F826C54C7C00E9CB1C /* YATOApp.swift in Sources */,
 				C984722426C54CAA00E9CB1C /* TasksModel.swift in Sources */,
+				C98EF13D26D646FB009BC421 /* UserModel.swift in Sources */,
 				C9350A3726CECBAA00CDA577 /* MenuView.swift in Sources */,
 				C99C7D2126CB5DD700012BCF /* LoginView.swift in Sources */,
 				C9AECFFE26C8FC4D00AAACC8 /* Tasks+CoreDataClass.swift in Sources */,

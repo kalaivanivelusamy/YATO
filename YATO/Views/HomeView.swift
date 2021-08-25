@@ -77,11 +77,20 @@ struct HomeView: View {
                     
                     GeometryReader { geometry in
                             ZStack(alignment: .leading) {
-                                PersonalInfoView(showMenu: $showMenu)
-                                    .frame(width: geometry.size.width, height: geometry.size.height)
-                                    .offset(x: showMenu ? geometry.size.width/2 : 0)
-                                    .disabled(showMenu ? true : false )
-                                //Sidebar() 
+                                
+                                VStack(alignment: .leading, spacing: 20) {
+                                   
+                                    CenterView()
+                                
+                            }
+                                
+                                
+                                
+//                                PersonalInfoView(showMenu: $showMenu)
+//                                    .frame(width: geometry.size.width, height: geometry.size.height)
+//                                    .offset(x: showMenu ? geometry.size.width/2 : 0)
+//                                    .disabled(showMenu ? true : false )
+                             
                                 MenuView()
                                     .frame(width:geometry.size.width/2)
                                     .opacity(showMenu ? 1 : 0)

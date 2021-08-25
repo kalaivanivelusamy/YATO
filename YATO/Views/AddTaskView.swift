@@ -11,7 +11,8 @@ struct AddTaskView: View {
     @State var showDate = false
     
     @Environment(\.managedObjectContext) var managedObjectContext
-    
+    @Environment(\.presentationMode) var presentationMode
+
 
     var body: some View {
         
@@ -22,6 +23,7 @@ struct AddTaskView: View {
                     Spacer().frame(maxWidth: .infinity)
                     Button(action: {
                         addPage.toggle()
+                        presentationMode.wrappedValue.dismiss()
                     }){
                 Image(systemName: "multiply")
                     .frame(width: 40, height: 40)
@@ -82,6 +84,8 @@ struct AddTaskView: View {
             Button(action: {
                 addTask()
                 addPage.toggle()
+                presentationMode.wrappedValue.dismiss()
+
             }){
                 HStack(alignment: .center, spacing: 5){
                     Text("Add task")

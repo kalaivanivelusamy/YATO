@@ -6,6 +6,7 @@ import Firebase
 class AuthenticationViewModel: NSObject,ObservableObject {
     
     @Published var state: SignInState = .signedOut
+   
 
     enum SignInState {
         
@@ -21,6 +22,7 @@ class AuthenticationViewModel: NSObject,ObservableObject {
     private func setupGoogleSignIn()
     {
         GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().shouldFetchBasicProfile = true
     }
     
     func signIn(){
@@ -60,11 +62,14 @@ extension AuthenticationViewModel: GIDSignInDelegate {
       if let authentication = user.authentication {
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
 
-        Auth.auth().signIn(with: credential) { (_, error) in
+        Auth.auth().signIn(with: credential) { [self] (_, error) in
           if let error = error {
             print(error.localizedDescription)
           } else {
             self.state = .signedIn
+            var userInfoDict = [String : Any]() 
+            userInfoDict = user.profile.dictionaryWithValues(forKeys: ["email","name","imageURL"])
+         // userModel = UserModel.init(userId: user.userID, userInfo: userInfoDict)!
           }
         }
       }
