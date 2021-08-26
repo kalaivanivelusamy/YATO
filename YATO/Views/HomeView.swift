@@ -84,7 +84,8 @@ struct HomeView: View {
                     MenuView()
                     .frame(width:geometry.size.width/2)
                     .opacity(showMenu ? 1 : 0)
-                    .transition(.move(edge: .leading))
+                    //.transition(.move(edge: .leading))
+                    .animation(.easeIn)
                     .gesture(drag) //to hide the opened side menu
                 }
         }

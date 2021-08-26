@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8DDE69F9-9CBE-4DAC-B2AF-C693FD23E24E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YATO/Views/CardView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "createSlider()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8DDE69F9-9CBE-4DAC-B2AF-C693FD23E24E - 927418f47312f02f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YATO.CardView.createSlider() -&gt; some"
-                  moduleName = "YATO"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kalaivv/Desktop/YATO/YATO/Views/CardView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "931">
-               </Location>
-               <Location
-                  uuid = "8DDE69F9-9CBE-4DAC-B2AF-C693FD23E24E - df0f4ca948d55ae3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0 in YATO.CardView.createSlider() -&gt; some"
-                  moduleName = "YATO"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kalaivv/Desktop/YATO/YATO/Views/CardView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "1209">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D391A05E-E116-4079-8779-1294FF694B7D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

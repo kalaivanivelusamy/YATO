@@ -1,6 +1,8 @@
 
 
 import SwiftUI
+import GoogleSignIn
+
 
 struct CenterView: View {
     
@@ -8,6 +10,8 @@ struct CenterView: View {
     @State var totalPersonalTasksFinished: Float = 0.0
     @State private var isPresented = false
     
+    private let user = GIDSignIn.sharedInstance().currentUser
+
     @FetchRequest(
         entity: Tasks.entity(),
         sortDescriptors: [
@@ -20,16 +24,17 @@ struct CenterView: View {
     
     var body: some View {
               
-        VStack(spacing:20){
+        VStack(alignment: .leading, spacing:0){
             
-            HStack{    
-                
-                Text("Hey, What's up!")
+            HStack(){    
+                Text("What's up! \(user?.profile.name ?? "")")
                     .font(.largeTitle)
+                    .bold()
                     .padding(EdgeInsets(top: 20, leading:20, bottom: 0, trailing: 0))
                 }
+            Spacer()
             
-            Text("Categories").font(.title3).foregroundColor(.black).padding(.horizontal, 10)
+            Text("Categories").font(.caption).foregroundColor(.gray).padding(.horizontal, 20)
                     
             ScrollView(.horizontal, showsIndicators: false){
                 HStack(spacing: 30) {
@@ -42,6 +47,7 @@ struct CenterView: View {
                 }
             Spacer()
             
+            Text("Today's tasks").font(.title3).foregroundColor(.gray).padding(.horizontal, 20)
             ZStack(alignment: .bottomTrailing) {
             
             List {
@@ -51,7 +57,7 @@ struct CenterView: View {
                     .onDelete(perform: { indexSet in
                         deleteTask(at: indexSet)
                     })
-            }
+            }.listRowBackground(Color.green)
             
 
             Button(action: {
