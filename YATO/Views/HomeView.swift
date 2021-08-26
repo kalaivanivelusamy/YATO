@@ -75,28 +75,18 @@ struct HomeView: View {
         
         return NavigationView {
                     
-                    GeometryReader { geometry in
-                            ZStack(alignment: .leading) {
-                                
-                                VStack(alignment: .leading, spacing: 20) {
-                                   
-                                    CenterView()
-                                
-                            }
-                                
-                                
-                                
-//                                PersonalInfoView(showMenu: $showMenu)
-//                                    .frame(width: geometry.size.width, height: geometry.size.height)
-//                                    .offset(x: showMenu ? geometry.size.width/2 : 0)
-//                                    .disabled(showMenu ? true : false )
-                             
-                                MenuView()
-                                    .frame(width:geometry.size.width/2)
-                                    .opacity(showMenu ? 1 : 0)
-                                    .transition(.move(edge: .leading))
-            }
-            .gesture(drag)
+            GeometryReader { geometry in
+                        
+                ZStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 20) {
+                        CenterView()
+                        }
+                    MenuView()
+                    .frame(width:geometry.size.width/2)
+                    .opacity(showMenu ? 1 : 0)
+                    .transition(.move(edge: .leading))
+                    .gesture(drag) //to hide the opened side menu
+                }
         }
         .navigationBarTitle("YATO", displayMode: .inline)
         .navigationBarItems(leading: (Button(action: { withAnimation {
@@ -104,49 +94,8 @@ struct HomeView: View {
                                         }}) {
                                             Image(systemName: "line.horizontal.3").imageScale(.large)
                                             }))
-                    
-        
             }
-        
-        
-       /* NavigationView {
-          VStack {
-             // Sidebar()
-            HStack {
-              // 3
-              NetworkImage(url: user?.profile.imageURL(withDimension: 200))
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100, alignment: .center)
-                .cornerRadius(8)
-
-              VStack(alignment: .leading) {
-                Text(user?.profile.name ?? "")
-                  .font(.headline)
-
-                Text(user?.profile.email ?? "")
-                  .font(.subheadline)
-              }
-
-              Spacer()
-            }
-            .padding()
-            .frame(maxWidth: .infinity)
-            .background(Color(.secondarySystemFill))
-            .cornerRadius(12)
-            .padding()
-
-            Spacer()
-
-            // 4
-            Button("Sign out") {
-              viewModel.signOut()
-            }
-            .buttonStyle(AuthenticationButtonStyle())
-          }
-          .navigationTitle("YATO")
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
- */
+   
       } 
 }
 

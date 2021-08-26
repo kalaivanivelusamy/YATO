@@ -15,6 +15,9 @@ struct CenterView: View {
         ]
     ) var allTasks: FetchedResults<Tasks>
 
+    @Environment(\.managedObjectContext) var managedObjectContext
+
+    
     var body: some View {
               
         VStack(spacing:20){
@@ -42,23 +45,14 @@ struct CenterView: View {
             ZStack(alignment: .bottomTrailing) {
             
             List {
-                
-//                Text("Hello")
-//                Text("Hello")
-//                Text("Hello")
-//                Text("Hello")
-//                Text("Hello")
-//                Text("Hello")
-//                Text("Hello")
-//                Text("Hello")
-//                Text("Hello")
-//                Text("Hello")
-
                     ForEach(allTasks) { task in 
                         TaskRowView(taskRow: task,totalTasksFinished: task.isBusiness ? $totalBusinessTasksFinished : $totalPersonalTasksFinished)
                     }
+                    .onDelete(perform: { indexSet in
+                        deleteTask(at: indexSet)
+                    })
             }
-            .frame(width: .infinity)
+            
 
             Button(action: {
                     print("clicked")
@@ -77,6 +71,17 @@ struct CenterView: View {
         .fullScreenCover(isPresented: $isPresented, content: {
             AddTaskView(addPage: $isPresented)
         })
+    }
+    
+    
+    
+    func deleteTask(at offsets: IndexSet) {
+        
+        offsets.forEach { index in
+            let task = self.allTasks[index]
+            self.managedObjectContext.delete(task)
+            PersistenceController.shared.save()
+        }
     }
 }
 
