@@ -4,21 +4,6 @@ import SwiftUI
 import GoogleSignIn
 
 
-struct MainView: View {
-    @Binding var showMenu: Bool 
-    var body: some View {
-        Button(action: {
-            print("Open the side Menu")
-            withAnimation{
-                showMenu.toggle()
-            }
-        }, label: {
-            Text("Show Menu")
-        })
-    }
-}
-
-
 struct PersonalInfoView: View {
     
     @EnvironmentObject var viewModel: AuthenticationViewModel
@@ -26,6 +11,7 @@ struct PersonalInfoView: View {
     private let user = GIDSignIn.sharedInstance().currentUser
     @Binding var showMenu: Bool 
 
+    
     var body: some View {
         
         HStack {
@@ -59,44 +45,62 @@ struct PersonalInfoView: View {
 }
 
 struct HomeView: View {
-      @EnvironmentObject var viewModel: AuthenticationViewModel
+    
+    @EnvironmentObject var viewModel: AuthenticationViewModel
       @State var showMenu = false
 
       var body: some View {
         
         let drag = DragGesture()
             .onEnded {
-                if $0.translation.width < -100 {
+                if $0.translation.width < -150 {
                     withAnimation {
                         showMenu.toggle()
                         }
                     }
             }
         
-        return NavigationView {
-                    
+       // return NavigationView {
+        
+        VStack (alignment: .leading) {
+            
+            Button(action: { withAnimation {
+                        self.showMenu.toggle()}})
+                        {
+                            Image(systemName:"line.horizontal.3")
+                            .imageScale(.large)
+                                .frame(width:40,height: 40)
+                        }
+            .padding(.leading,20)
+            .padding(.top,30)
+      
             GeometryReader { geometry in
                         
                 ZStack(alignment: .leading) {
                     VStack(alignment: .leading, spacing: 20) {
                         CenterView()
                         }
-                    MenuView()
-                    .frame(width:geometry.size.width/2)
-                    .opacity(showMenu ? 1 : 0)
-                    //.transition(.move(edge: .leading))
-                    .animation(.easeIn)
-                    .gesture(drag) //to hide the opened side menu
+//                    MenuView()
+//                        .frame(width:geometry.size.width-100,height: geometry.size.height).edgesIgnoringSafeArea(.all)
+//                    .opacity(showMenu ? 1 : 0)
+//                    .transition(.slide)
+//                    .animation(.easeInOut)
+//                    .gesture(drag)
+                    //to hide the opened side menu
                 }
         }
-        .navigationBarTitle("YATO", displayMode: .inline)
-        .navigationBarItems(leading: (Button(action: { withAnimation {
-                                                self.showMenu.toggle()
-                                        }}) {
-                                            Image(systemName: "line.horizontal.3").imageScale(.large)
-                                            }))
-            }
-   
+        }
+        .fullScreenCover(isPresented: $showMenu, content: {
+            MenuView()
+            .edgesIgnoringSafeArea(.all)
+            .frame(width: 350)
+            .transition(.slide) 
+            //.opacity(showMenu ? 1 : 0)
+            .animation(Animation.interactiveSpring())
+            .gesture(drag)
+            //to hide the opened side menu
+        })             
+      
       } 
 }
 

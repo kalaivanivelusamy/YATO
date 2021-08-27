@@ -5,6 +5,10 @@ import GoogleSignIn
 struct MenuView: View {
     
     private let user = GIDSignIn.sharedInstance().currentUser
+    let data = [0.7,0.1,0.3,0.5,0.6]
+    @State private var completionAmount: CGFloat = 0.0
+
+    let timer = Timer.publish(every:0.45, on: .main, in: .common).autoconnect()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -41,10 +45,10 @@ struct MenuView: View {
            
             HStack {
                 Image(systemName: "gear")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white)
                     .imageScale(.large)
                 Text("Settings")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white)
                     .font(.headline)
                 } .padding(.top, 30)
             
@@ -54,14 +58,23 @@ struct MenuView: View {
             VStack(alignment: .leading, spacing: 5) {
                //Graph for consistency
                 
-                Chart(data: [0.7,0.1,0.3,0.5,0.6])
+               Chart(data: [0.7,0.1,0.8,0.5,0.6])
                     .chartStyle(
-                        LineChartStyle(.quadCurve, lineColor: .blue, lineWidth: 3.0))
+                        LineChartStyle(.quadCurve, lineColor: Color(#colorLiteral(red: 0.3767060637, green: 1, blue: 0.7470368743, alpha: 1)), lineWidth: 3.0,trimTo: $completionAmount))
                     .shadow(radius: 3)
-                    .frame(width: 200, height: 100, alignment: .leading)
+                    .frame(width: 200, height: 100, alignment: .leading) 
+                            .onReceive(timer) { _ in
+                                withAnimation {
+                                    if completionAmount == 1 { 
+                                        completionAmount = 0
+                                    } else {
+                                        completionAmount += 0.2
+                                    }
+                                }
+                            }
 
                 Text("Good")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white)
                     .font(.headline)
                                 
                 Text("Consistency")
@@ -72,11 +85,11 @@ struct MenuView: View {
         }
         .padding(.leading,30)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(red: 32/255, green: 32/255, blue: 32/255))
+        .background(Color(#colorLiteral(red: 0.04327090085, green: 0.1375527084, blue: 0.3708509803, alpha: 1)))
         .edgesIgnoringSafeArea(.all)
 
-        }
     }
+}
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {

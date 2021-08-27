@@ -90,14 +90,15 @@ struct CardView: View {
             VStack(alignment: .leading,spacing:10) {
             
                 Text( isBusiness ? "\(businessTasks.count) tasks" : "\(personalTasks.count) tasks").foregroundColor(.gray)
+                    .padding(.top,20)
 
             Text(cardText).font(.headline).foregroundColor(.black)
                
             ProgressBar(value:$progressValue).frame(height: 5)
                 
-            }.padding(.horizontal,5).padding(.bottom,15).frame(width: 200, height: 60)  
-        }.frame(width: 250, height: 120)
-        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 0)
+            }.padding(.horizontal,15).padding(.bottom,15).frame(width: 200, height: 60)  
+        }.frame(width: 200, height: 120)
+        .shadow(color: Color.gray.opacity(0.1), radius: 4, x: 0, y: 0)
         .onAppear(perform: {
             startProgressBar()
         })

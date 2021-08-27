@@ -30,14 +30,14 @@ struct CenterView: View {
                 Text("What's up! \(user?.profile.name ?? "")")
                     .font(.largeTitle)
                     .bold()
-                    .padding(EdgeInsets(top: 20, leading:20, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: 20, leading:25, bottom: 0, trailing: 0))
                 }
             Spacer()
             
-            Text("Categories").font(.caption).foregroundColor(.gray).padding(.horizontal, 20)
+            Text("Categories").font(.caption).foregroundColor(.gray).padding(.horizontal, 25)
                     
             ScrollView(.horizontal, showsIndicators: false){
-                HStack(spacing: 30) {
+                HStack(spacing: 20) {
                     CardView(isBusiness: true,cardText: "Business",totalTasksFinished:$totalBusinessTasksFinished)
                     CardView(isBusiness: false,cardText: "Personal",totalTasksFinished: $totalPersonalTasksFinished)
                     CardView(isBusiness: false,cardText: "Finance",totalTasksFinished: $totalPersonalTasksFinished)
@@ -47,7 +47,7 @@ struct CenterView: View {
                 }
             Spacer()
             
-            Text("Today's tasks").font(.title3).foregroundColor(.gray).padding(.horizontal, 20)
+            Text("Today's tasks").font(.title3).foregroundColor(.gray).padding(.horizontal, 25)
             ZStack(alignment: .bottomTrailing) {
             
             List {
@@ -74,6 +74,7 @@ struct CenterView: View {
                     .offset(x:-10,y: -25)
                 }
         }
+        .background(Color(#colorLiteral(red: 0.9801443219, green: 0.9841703773, blue: 0.9964856505, alpha: 1)))
         .fullScreenCover(isPresented: $isPresented, content: {
             AddTaskView(addPage: $isPresented)
         })
