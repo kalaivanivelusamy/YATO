@@ -10,27 +10,21 @@ struct ProgressBar: View {
         
         GeometryReader { geometry in
             ZStack(alignment: .leading){
+               
                 Rectangle().frame(width: geometry.size.width, height: geometry.size.height)
                     .opacity(0.3)
                     .foregroundColor(Color(UIColor.systemGray))
                 
-                ZStack(){
                     
                     Rectangle()
                         .frame(width: min(CGFloat(self.value)*geometry.size.width, geometry.size.width), height: geometry.size.height)
-                            .foregroundColor(Color(UIColor.systemPink))
-                            .animation(.linear)
-                        .alignmentGuide(.trailing, computeValue: { dimension in
-                            dimension[.trailing]
-                        })
+                        .foregroundColor(Color(UIColor.systemPink))
+                        .animation(.linear)
+                        
                         Rectangle()
                                .fill(Color.pink)
                                .frame(width:4, height:10)
-                            .alignmentGuide(VerticalAlignment.top, computeValue: { dimension in
-                                dimension[.bottom]
-                            })
-                        .animation(.linear)
-                }
+                            .offset(x: CGFloat(self.value)*geometry.size.width,y: -2)
                 
             }.cornerRadius(40)  
         }
@@ -72,7 +66,8 @@ struct CardView: View {
             withAnimation(){
                 self.progressValue += 0.01
                 if self.progressValue >= 0.6 {
-                    timer.invalidate()
+                    //timer.invalidate()
+                    self.progressValue = 0.0
                 } 
             }
         }
@@ -93,7 +88,6 @@ struct CardView: View {
                     .padding(.top,20)
 
             Text(cardText).font(.headline).foregroundColor(.black)
-               
             ProgressBar(value:$progressValue).frame(height: 5)
                 
             }.padding(.horizontal,15).padding(.bottom,15).frame(width: 200, height: 60)  

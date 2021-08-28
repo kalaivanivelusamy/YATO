@@ -3,13 +3,12 @@ import SwiftUI
 
 struct TaskRowView: View {
 
-    let taskRow: Tasks
+   @ObservedObject var taskRow: Tasks
     
     @State var isDone = false
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var totalTasksFinished: Float
-
     
     var body: some View {
         
@@ -27,18 +26,27 @@ struct TaskRowView: View {
             .buttonStyle(PlainButtonStyle())
             .frame(width: 25, height: 25, alignment: .leading)
            
-        getTitle().font(Font.custom("Georgia", size: 20.0)).strikethrough(isDone).foregroundColor(isDone ? .gray : .black).padding(10)
-       // getDate().font(.title2).strikethrough(isDone).foregroundColor(isDone ? .gray : .black)            
+            getTitle().font(Font.custom("Georgia", size: 20.0)).strikethrough(isDone)
+                .foregroundColor(isDone ? .gray : .black)
+                .padding(10)
+                .onTapGesture {
+                    getTitle()
+            }
 
         }
         
         .frame(maxWidth: .infinity,alignment: .leading)
-        .frame(height:30)
+                .frame(height:30)
         .padding(10)
         .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray.opacity(0.2),lineWidth: 0.3))
         .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 0, y: 2)
+        
+        
     }
     
+    func didDismiss() {
+            // Handle the dismissing action.
+        }
     
     func getTitle() -> Text {
         if let text = taskRow.name.map(Text.init){

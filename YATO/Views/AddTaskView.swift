@@ -9,10 +9,10 @@ struct AddTaskView: View {
     @State var isBusinessTask = true
     @State var taskdate = Date()
     @State var showDate = false
-    
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
 
+   
 
     var body: some View {
         
@@ -33,8 +33,7 @@ struct AddTaskView: View {
                     .padding(.trailing,40)
                 }
                 
-            TextField("Add New Task", text: $newTask)
-                .padding(30)
+            TextField("Add New Task", text: $newTask).padding(30)
                 
                 //calendar
                 DatePicker(
@@ -102,8 +101,8 @@ struct AddTaskView: View {
     }
     
     func addTask() {
-        
-        let newTaskObj = Tasks(context: managedObjectContext)
+       
+        var newTaskObj = Tasks(context: managedObjectContext)
         newTaskObj.name = newTask
         newTaskObj.date = taskdate
         newTaskObj.isBusiness = isBusinessTask

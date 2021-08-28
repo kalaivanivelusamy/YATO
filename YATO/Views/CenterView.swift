@@ -2,7 +2,41 @@
 
 import SwiftUI
 import GoogleSignIn
+import CoreData
 
+extension CenterView{
+    
+//    public func getPredicate() -> NSCompoundPredicate {
+//        
+//        var calendar = Calendar.current
+//        calendar.timeZone = NSTimeZone.local
+//        let dateFrom = calendar.startOfDay(for: Date()) 
+//        let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)
+//        let fromPredicate = NSPredicate(format: "%@ >= %K", dateFrom as NSDate, #keyPath(Tasks.date))
+//        let toPredicate = NSPredicate(format: "%K < %@", #keyPath(Tasks.date), dateTo as! NSDate)
+//        let datePredicate = NSCompoundPredicate(type: .and, subpredicates: [fromPredicate,toPredicate])      
+//        self.dateFetchRequest.predicate = datePredicate
+//       
+//        return datePredicate
+//    }
+    
+    
+    static var dueSoonFetchRequest: NSFetchRequest<Tasks> {
+        
+        var calendar = Calendar.current
+        calendar.timeZone = NSTimeZone.local
+        let dateFrom = calendar.startOfDay(for: Date()) 
+        let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)
+        let fromPredicate = NSPredicate(format: "%@ >= %K", dateFrom as NSDate, #keyPath(Tasks.date))
+        let toPredicate = NSPredicate(format: "%K <= %@", #keyPath(Tasks.date), dateTo! as NSDate)
+        let datePredicate = NSCompoundPredicate(type: .and, subpredicates: [fromPredicate,toPredicate])      
+        
+        let request: NSFetchRequest<Tasks> = Tasks.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        request.predicate = datePredicate
+        return request
+      }
+}
 
 struct CenterView: View {
     
@@ -12,16 +46,31 @@ struct CenterView: View {
     
     private let user = GIDSignIn.sharedInstance().currentUser
 
-    @FetchRequest(
-        entity: Tasks.entity(),
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \Tasks.name, ascending: true),
-        ]
-    ) var allTasks: FetchedResults<Tasks>
+    
+    @FetchRequest(fetchRequest: CenterView.dueSoonFetchRequest)
+    var allTasks: FetchedResults<Tasks>
+    
+//    @FetchRequest(
+//               entity: Tasks.entity(),
+//               sortDescriptors: [
+//                   NSSortDescriptor(keyPath: \Tasks.name, ascending: true),
+//               ]
+//           )  var allTasks: FetchedResults<Tasks>
+    
+
 
     @Environment(\.managedObjectContext) var managedObjectContext
-
     
+//    init() {
+//        @FetchRequest(
+//            entity: Tasks.entity(),
+//            sortDescriptors: [
+//                NSSortDescriptor(keyPath: \Tasks.name, ascending: true),
+//            ]
+//        )  var allTasks: FetchedResults<Tasks>
+//    }
+    
+   
     var body: some View {
               
         VStack(alignment: .leading, spacing:0){
@@ -41,7 +90,6 @@ struct CenterView: View {
                     CardView(isBusiness: true,cardText: "Business",totalTasksFinished:$totalBusinessTasksFinished)
                     CardView(isBusiness: false,cardText: "Personal",totalTasksFinished: $totalPersonalTasksFinished)
                     CardView(isBusiness: false,cardText: "Finance",totalTasksFinished: $totalPersonalTasksFinished)
-        
                     }
                     .padding()
                 }
@@ -53,10 +101,8 @@ struct CenterView: View {
             List {
                     ForEach(allTasks) { task in 
                         TaskRowView(taskRow: task,totalTasksFinished: task.isBusiness ? $totalBusinessTasksFinished : $totalPersonalTasksFinished)
-                    }
-                    .onDelete(perform: { indexSet in
-                        deleteTask(at: indexSet)
-                    })
+                }
+                .onDelete(perform: deleteTask)
             }.listRowBackground(Color.green)
             
 
@@ -80,14 +126,15 @@ struct CenterView: View {
         })
     }
     
-    
-    
     func deleteTask(at offsets: IndexSet) {
-        
-        offsets.forEach { index in
-            let task = self.allTasks[index]
-            self.managedObjectContext.delete(task)
-            PersistenceController.shared.save()
+        withAnimation {
+            managedObjectContext.perform {
+                offsets.forEach { index in
+                    let task = self.allTasks[index]
+                    self.managedObjectContext.delete(task)
+                }
+                PersistenceController.shared.save()
+            }
         }
     }
 }
