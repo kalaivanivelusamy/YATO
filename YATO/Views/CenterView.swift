@@ -91,11 +91,13 @@ struct CenterView: View {
                     CardView(isBusiness: false,cardText: "Personal",totalTasksFinished: $totalPersonalTasksFinished)
                     CardView(isBusiness: false,cardText: "Finance",totalTasksFinished: $totalPersonalTasksFinished)
                     }
-                    .padding()
+                    .padding(.horizontal, 25)
+                    .padding(.vertical,20)
                 }
             Spacer()
             
             Text("Today's tasks").font(.title3).foregroundColor(Color(UIColor.systemGray)).padding(.horizontal, 25)
+            
             ZStack(alignment: .bottomTrailing) {
             
             List {
@@ -103,6 +105,7 @@ struct CenterView: View {
                         TaskRowView(taskRow: task,totalTasksFinished: task.isBusiness ? $totalBusinessTasksFinished : $totalPersonalTasksFinished)
                 }
                 .onDelete(perform: deleteTask)
+               
             }
             
 

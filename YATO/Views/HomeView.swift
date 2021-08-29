@@ -91,8 +91,10 @@ struct HomeView: View {
                         }){
                         Image(systemName:"line.horizontal.3") 
                             .imageScale(.large)
-                            .frame(width:80,height: 80)
-                    }.padding(15).opacity(showMenu ? 0 : 1),alignment:.topLeading)
+                    }
+                    .padding(.top,80)
+                    .padding(.leading,15)
+                    .opacity(showMenu ? 0 : 1),alignment:.topLeading)
         }
 
            // }

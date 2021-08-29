@@ -26,7 +26,7 @@ struct TaskRowView: View {
             .buttonStyle(PlainButtonStyle())
             .frame(width: 25, height: 25, alignment: .leading)
            
-            getTitle().font(Font.custom("Georgia", size: 20.0)).strikethrough(isDone)
+            getTitle().strikethrough(isDone)
                 .foregroundColor(isDone ? Color(.secondaryLabel) : Color(UIColor.label))
                 .padding(10)
                 .onTapGesture {

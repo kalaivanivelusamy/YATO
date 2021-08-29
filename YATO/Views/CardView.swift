@@ -87,12 +87,15 @@ struct CardView: View {
                 Text( isBusiness ? "\(businessTasks.count) tasks" : "\(personalTasks.count) tasks").foregroundColor(.gray)
                     .padding(.top,20)
 
-            Text(cardText).font(.headline).foregroundColor(.black)
+            Text(cardText).font(.title2).fontWeight(.semibold)
             ProgressBar(value:$progressValue).frame(height: 5)
                 
-            }.padding(.horizontal,15).padding(.bottom,15).frame(width: 200, height: 60)  
-        }.frame(width: 200, height: 120)
-        .shadow(color: Color.gray.opacity(0.1), radius: 4, x: 0, y: 0)
+            }
+            .padding(.horizontal,15).padding(.bottom,15)
+            //.frame(width: 200, height: 60)  
+        }
+        .frame(width: 200, height: 120)
+        .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 0)
         .onAppear(perform: {
             startProgressBar()
         })
