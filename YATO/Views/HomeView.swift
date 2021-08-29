@@ -11,6 +11,9 @@ struct PersonalInfoView: View {
     private let user = GIDSignIn.sharedInstance().currentUser
     @Binding var showMenu: Bool 
 
+//    func getRect() {
+//        UIScreen.main.bounds.width
+//    }
     
     var body: some View {
         
@@ -47,7 +50,9 @@ struct PersonalInfoView: View {
 struct HomeView: View {
     
     @EnvironmentObject var viewModel: AuthenticationViewModel
-      @State var showMenu = false
+    @State var showMenu = false
+
+    @State var selectedTab = "Home"
 
       var body: some View {
         
@@ -60,46 +65,38 @@ struct HomeView: View {
                     }
             }
         
-       // return NavigationView {
-        
-        VStack (alignment: .leading) {
+   
+        ZStack{
             
-            Button(action: { withAnimation {
-                        self.showMenu.toggle()}})
-                        {
-                            Image(systemName:"line.horizontal.3")
-                            .imageScale(.large)
-                                .frame(width:40,height: 40)
-                        }
-            .padding(.leading,20)
-            .padding(.top,30)
-      
-            GeometryReader { geometry in
-                        
+            MenuView(showMenu: $showMenu, selectedTab: $selectedTab).gesture(drag)
+            
                 ZStack(alignment: .leading) {
-                    VStack(alignment: .leading, spacing: 20) {
-                        CenterView()
-                        }
-//                    MenuView()
-//                        .frame(width:geometry.size.width-100,height: geometry.size.height).edgesIgnoringSafeArea(.all)
-//                    .opacity(showMenu ? 1 : 0)
-//                    .transition(.slide)
-//                    .animation(.easeInOut)
-//                    .gesture(drag)
-                    //to hide the opened side menu
+                    Color.white
+                    .opacity(0.5)
+                    .cornerRadius(showMenu ? 15.0 : 0)
+                    .offset(x: showMenu ? -20 : 0)
+                    .padding(.vertical,30)
+                        
+                    CenterView()
+                    .cornerRadius(showMenu ? 15.0 : 0)
                 }
+               .scaleEffect(showMenu ? 0.84 : 1)
+                .offset(x: showMenu ? CGFloat(UIScreen.main.bounds.width)-130: 0)
+                .ignoresSafeArea()
+                .overlay(
+                    Button(action: {
+                        withAnimation(.spring()){
+                        showMenu.toggle()
+                        }
+                        }){
+                        Image(systemName:"line.horizontal.3") 
+                            .imageScale(.large)
+                            .frame(width:80,height: 80)
+                    }.padding(15).opacity(showMenu ? 0 : 1),alignment:.topLeading)
         }
-        }
-        .fullScreenCover(isPresented: $showMenu, content: {
-            MenuView()
-            .edgesIgnoringSafeArea(.all)
-            .frame(width: 350)
-            .transition(.slide) 
-            //.opacity(showMenu ? 1 : 0)
-            .animation(Animation.interactiveSpring())
-            .gesture(drag)
-            //to hide the opened side menu
-        })             
+
+           // }
+        //}.ignoresSafeArea()
       
       } 
 }

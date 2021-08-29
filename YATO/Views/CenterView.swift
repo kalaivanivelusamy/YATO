@@ -79,7 +79,7 @@ struct CenterView: View {
                 Text("What's up! \(user?.profile.name ?? "")")
                     .font(.largeTitle)
                     .bold()
-                    .padding(EdgeInsets(top: 20, leading:25, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: 120, leading:25, bottom: 0, trailing: 0))
                 }
             Spacer()
             

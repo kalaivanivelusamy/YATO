@@ -24,13 +24,18 @@ struct ContentView: View {
     @State var totalBusinessTasksFinished: Float = 0.0
     @State var totalPersonalTasksFinished: Float = 0.0
 
+    @State var showMenu = false
+
     var body: some View {
-        switch viewModel.state {
-            case .signedIn:
+//        switch viewModel.state {
+//            case .signedIn:
+       
                 HomeView()
-            default:
-                LoginView()
-        }
+        
+        
+//            default:
+//                LoginView()
+//        }
         
     }
     

@@ -10,6 +10,8 @@
 		61E7C5AE9F77C6538C37EAB1 /* Pods_YATOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D7C10562993B7E4E21A288 /* Pods_YATOTests.framework */; };
 		AF496F0E2D8141A20CD499F4 /* Pods_YATO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A4AAFE9E1158F88C48C4FC /* Pods_YATO.framework */; };
 		C40D0F0F8228F9E720512973 /* Pods_YATO_YATOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFD32D61185EBD2A0892FF5 /* Pods_YATO_YATOUITests.framework */; };
+		C9225C0C26DB7FBB007B43CD /* TabButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9225C0B26DB7FBB007B43CD /* TabButtonView.swift */; };
+		C9225C0E26DB87D6007B43CD /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9225C0D26DB87D6007B43CD /* CustomCorner.swift */; };
 		C9350A3526CDEB1D00CDA577 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9350A3426CDEB1D00CDA577 /* Sidebar.swift */; };
 		C9350A3726CECBAA00CDA577 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9350A3626CECBAA00CDA577 /* MenuView.swift */; };
 		C95D1A3F26C6EF3700636BA6 /* YATO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C95D1A3D26C6EF3700636BA6 /* YATO.xcdatamodeld */; };
@@ -63,6 +65,8 @@
 		4FFD32D61185EBD2A0892FF5 /* Pods_YATO_YATOUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YATO_YATOUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5527DDE70C997D93E4FFE0E6 /* Pods-YATO-YATOUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATO-YATOUITests.release.xcconfig"; path = "Target Support Files/Pods-YATO-YATOUITests/Pods-YATO-YATOUITests.release.xcconfig"; sourceTree = "<group>"; };
 		90118BCF90ABB1CFC976294B /* Pods-YATO-YATOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATO-YATOUITests.debug.xcconfig"; path = "Target Support Files/Pods-YATO-YATOUITests/Pods-YATO-YATOUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9225C0B26DB7FBB007B43CD /* TabButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonView.swift; sourceTree = "<group>"; };
+		C9225C0D26DB87D6007B43CD /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		C9350A3426CDEB1D00CDA577 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		C9350A3626CECBAA00CDA577 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		C93D8DCB26C7D19400864E49 /* YATO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YATO.entitlements; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 				C9350A3426CDEB1D00CDA577 /* Sidebar.swift */,
 				C9350A3626CECBAA00CDA577 /* MenuView.swift */,
 				C98EF13E26D65F89009BC421 /* CenterView.swift */,
+				C9225C0B26DB7FBB007B43CD /* TabButtonView.swift */,
+				C9225C0D26DB87D6007B43CD /* CustomCorner.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -538,11 +544,13 @@
 			files = (
 				C99C7D2426CB5FF500012BCF /* AuthenticationViewModel.swift in Sources */,
 				C95D1A4526C6F08000636BA6 /* PersistenceController.swift in Sources */,
+				C9225C0C26DB7FBB007B43CD /* TabButtonView.swift in Sources */,
 				C98B1FFB26CD77430065DCBF /* HomeView.swift in Sources */,
 				C984722926C58AB600E9CB1C /* TaskRowView.swift in Sources */,
 				C9AECFFF26C8FC4D00AAACC8 /* Tasks+CoreDataProperties.swift in Sources */,
 				C98471FA26C54C7C00E9CB1C /* ContentView.swift in Sources */,
 				C95D1A3F26C6EF3700636BA6 /* YATO.xcdatamodeld in Sources */,
+				C9225C0E26DB87D6007B43CD /* CustomCorner.swift in Sources */,
 				C98EF13F26D65F89009BC421 /* CenterView.swift in Sources */,
 				C9AECFFB26C8F07B00AAACC8 /* CardView.swift in Sources */,
 				C98471F826C54C7C00E9CB1C /* YATOApp.swift in Sources */,
@@ -728,7 +736,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = byod_development_hotspot;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -754,7 +762,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = byod_development_hotspot;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
