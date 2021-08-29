@@ -27,8 +27,8 @@ struct AddTaskView: View {
                     }){
                 Image(systemName: "multiply")
                     .frame(width: 40, height: 40)
-                    .foregroundColor(.black)
-                    .overlay(Circle().stroke(Color.gray,lineWidth: 1))
+                    .foregroundColor(Color(UIColor.systemGray))
+                    .overlay(Circle().stroke(Color(UIColor.systemGray),lineWidth: 1))
                     }
                     .padding(.trailing,40)
                 }

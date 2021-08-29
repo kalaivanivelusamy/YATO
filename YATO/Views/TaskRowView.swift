@@ -27,7 +27,7 @@ struct TaskRowView: View {
             .frame(width: 25, height: 25, alignment: .leading)
            
             getTitle().font(Font.custom("Georgia", size: 20.0)).strikethrough(isDone)
-                .foregroundColor(isDone ? .gray : .black)
+                .foregroundColor(isDone ? Color(.secondaryLabel) : Color(UIColor.label))
                 .padding(10)
                 .onTapGesture {
                     getTitle()
@@ -38,9 +38,8 @@ struct TaskRowView: View {
         .frame(maxWidth: .infinity,alignment: .leading)
                 .frame(height:30)
         .padding(10)
-        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray.opacity(0.2),lineWidth: 0.3))
-        .shadow(color: Color.gray.opacity(0.2), radius: 5, x: 0, y: 2)
-        
+        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(UIColor.systemGray).opacity(0.2),lineWidth: 0.3))
+        .shadow(color: Color(UIColor.systemGray).opacity(0.2), radius: 5, x: 0, y: 2)
         
     }
     

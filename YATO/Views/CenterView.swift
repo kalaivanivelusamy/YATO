@@ -95,7 +95,7 @@ struct CenterView: View {
                 }
             Spacer()
             
-            Text("Today's tasks").font(.title3).foregroundColor(.gray).padding(.horizontal, 25)
+            Text("Today's tasks").font(.title3).foregroundColor(Color(UIColor.systemGray)).padding(.horizontal, 25)
             ZStack(alignment: .bottomTrailing) {
             
             List {
@@ -103,7 +103,7 @@ struct CenterView: View {
                         TaskRowView(taskRow: task,totalTasksFinished: task.isBusiness ? $totalBusinessTasksFinished : $totalPersonalTasksFinished)
                 }
                 .onDelete(perform: deleteTask)
-            }.listRowBackground(Color.green)
+            }
             
 
             Button(action: {
@@ -120,7 +120,8 @@ struct CenterView: View {
                     .offset(x:-10,y: -25)
                 }
         }
-        .background(Color(#colorLiteral(red: 0.9801443219, green: 0.9841703773, blue: 0.9964856505, alpha: 1)))
+       // .background(Color(#colorLiteral(red: 0.9801443219, green: 0.9841703773, blue: 0.9964856505, alpha: 1)))
+        .background(Color(UIColor.systemBackground))
         .fullScreenCover(isPresented: $isPresented, content: {
             AddTaskView(addPage: $isPresented)
         })
