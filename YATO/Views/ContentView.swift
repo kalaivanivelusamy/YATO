@@ -2,9 +2,14 @@
 
 import SwiftUI
 
+import GoogleSignIn
+
 
 struct ContentView: View {
     
+
+    @EnvironmentObject var viewModel: AuthenticationViewModel
+
     @FetchRequest(
         entity: Tasks.entity(),
         sortDescriptors: [
@@ -12,51 +17,27 @@ struct ContentView: View {
         ]
     ) var allTasks: FetchedResults<Tasks>
     
+    
     @State var addPage = false
     @State var isNewTask = false
-
-    @StateObject var tasksContainer = TasksContainer()
     @Environment(\.managedObjectContext) var managedObjectContext
+    @State var totalBusinessTasksFinished: Float = 0.0
+    @State var totalPersonalTasksFinished: Float = 0.0
 
-    
+    @State var showMenu = false
+
     var body: some View {
+//        switch viewModel.state {
+//            case .signedIn:
+       
+                HomeView()
         
-        VStack(spacing:20){
-            HStack{    
-                Text("Hey, What's up!")
-                    .font(.largeTitle)
-                    .padding(EdgeInsets(top: 20, leading:20, bottom: 0, trailing: 0))
-                Spacer()
-            }
-        NavigationView {
-            List {
-                ForEach(allTasks) { task in 
-                    TaskRowView(taskRow: task)
-                }
-                .onDelete(perform: deleteTask)
-//                .onTapGesture {
-//                            print("tapped")
-//                        }
-            }
-            .sheet(isPresented: $addPage) {
-                AddTaskView(addPage: $addPage)
-            }
-            .navigationTitle("Today's tasks")
-            .navigationBarItems(trailing:
-                Button(action: { addPage.toggle() }){
-                    Image(systemName: "plus")
-                        .frame(width: 50, height: 50)
-                        .background(Color.blue)
-                        .foregroundColor(Color.white)
-                        .clipShape(Circle())
-                        .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
-                }
-            )
-        }
-     }
-
-        }
-    
+        
+//            default:
+//                LoginView()
+//        }
+        
+    }
     
     
     func deleteTask(at offsets: IndexSet) {
@@ -67,11 +48,14 @@ struct ContentView: View {
             PersistenceController.shared.save()
         }
     }
+    
+   
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
-

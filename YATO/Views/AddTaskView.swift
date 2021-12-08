@@ -9,10 +9,9 @@ struct AddTaskView: View {
     @State var isBusinessTask = true
     @State var taskdate = Date()
     @State var showDate = false
-    
     @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.presentationMode) var presentationMode
     
-
     var body: some View {
         
         NavigationView {
@@ -22,40 +21,50 @@ struct AddTaskView: View {
                     Spacer().frame(maxWidth: .infinity)
                     Button(action: {
                         addPage.toggle()
+                        presentationMode.wrappedValue.dismiss()
                     }){
                 Image(systemName: "multiply")
                     .frame(width: 40, height: 40)
-                    .foregroundColor(.black)
-                    .overlay(Circle().stroke(Color.gray,lineWidth: 1))
+                    .foregroundColor(Color(UIColor.systemGray))
+                    .overlay(Circle().stroke(Color(UIColor.systemGray),lineWidth: 1))
                     }
                     .padding(.trailing,40)
                 }
                 
-            TextField("Add New Task", text: $newTask)
-                .padding(30)
+        TextField("Enter New Task", text: $newTask)
+        .accentColor(.black)
+        .padding(30)
                 
                 //calendar
-                DatePicker(
-                    "", selection: $taskdate, displayedComponents: .date)
-                    .labelsHidden()
-                    .frame(alignment: .center)
-                    .hideView(!showDate)
+//        DatePicker(
+//                    "date", selection: $taskdate, displayedComponents: .date)
+//                    .labelsHidden()
+//                    .frame(alignment: .center)
+//                    .hideView(!showDate)
                 
-            HStack (spacing: 20) {
-                //calendar button
-                Button(action: {
-                    print("calendar is clicked")
-                    showDate.toggle()
-                }){
-                    HStack(alignment: .center, spacing: 0){
-                    Image(systemName: "calendar")
-                        .foregroundColor(.gray)
-                    Text("Today").frame( alignment: .center).foregroundColor(.gray)
+            HStack (spacing: 20){
+           
+                    
+                    Button(action: {
+                        print("calendar is clicked")
+                        showDate.toggle()
+                    }){
+                        HStack (spacing: 0){
+                        Image(systemName: "calendar")
+                            .imageScale(.medium)
+                            .foregroundColor(.gray)
+                            .padding(5)
+//                        Text("Today").frame( alignment: .center).foregroundColor(.gray)
+                            DatePicker("date", selection: $taskdate, displayedComponents: .date)
+                            .background(Color(.clear))
+                            .labelsHidden()                        
+                        }
                     }
-                }
-                .frame(width: 100, height: 40)
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray,lineWidth: 1.0))
-                .padding()
+                    //.frame(width: 100, height: 40,alignment: .leading)
+                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray,lineWidth: 1.0))
+                    .padding(.leading,20)
+                    
+                    
                 
                 //category button
                 
@@ -82,6 +91,8 @@ struct AddTaskView: View {
             Button(action: {
                 addTask()
                 addPage.toggle()
+                presentationMode.wrappedValue.dismiss()
+
             }){
                 HStack(alignment: .center, spacing: 5){
                     Text("Add task")
@@ -98,10 +109,11 @@ struct AddTaskView: View {
     }
     
     func addTask() {
-        
+       
         let newTaskObj = Tasks(context: managedObjectContext)
         newTaskObj.name = newTask
         newTaskObj.date = taskdate
+        newTaskObj.isBusiness = isBusinessTask
         newTaskObj.isFinished = false
         newTaskObj.id = UUID()
         
